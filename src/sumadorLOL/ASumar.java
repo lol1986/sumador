@@ -28,9 +28,9 @@ public class ASumar {
 	public String mostrar() {
 		int i=0;
 		String resultado="";
-		int total=0;
-		char[] numeros=this.valor_inicial.toCharArray();
-		if(numeros[0]=='-') {
+		int suma=0;
+		char[] digitos=this.valor_inicial.toCharArray();
+		if(digitos[0]=='-') {
 			resultado="";
 		}
 		else {
@@ -38,10 +38,10 @@ public class ASumar {
 				if (i>0) {
 					resultado= resultado +" + ";
 				}
-				total=total+Character.getNumericValue(numeros[i]);
-				resultado= resultado+numeros[i];	
+				suma=suma+Character.getNumericValue(digitos[i]);
+				resultado= resultado+digitos[i];	
 			}
-			resultado = resultado +" = "+total;
+			resultado = resultado +" = "+suma;
 		}
 		return resultado;
 	}
