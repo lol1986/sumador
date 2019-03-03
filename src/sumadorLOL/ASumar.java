@@ -20,24 +20,29 @@ public class ASumar {
 		this.valor_inicial=valor_inicial;
 	}
 
-	 /**
-	  * mostrar imprime el resultado de la suma
-	  * 
-	  * @return	la capacidad (en litros) del depósito
-	  * */
+	/**
+	 * mostrar imprime el resultado de la suma
+	 * 
+	 * @return	la capacidad (en litros) del depósito
+	 * */
 	public String mostrar() {
 		int i=0;
 		String resultado="";
 		int total=0;
 		char[] numeros=this.valor_inicial.toCharArray();
-		for (i=0;i<this.valor_inicial.length();i++) {
-			if (i>0) {
-				resultado= resultado +" + ";
-			}
-			total=total+Character.getNumericValue(numeros[i]);
-			resultado= resultado+numeros[i];	
+		if(numeros[0]=='-') {
+			resultado="";
 		}
-		resultado = resultado +" = "+total;
+		else {
+			for (i=0;i<this.valor_inicial.length();i++) {
+				if (i>0) {
+					resultado= resultado +" + ";
+				}
+				total=total+Character.getNumericValue(numeros[i]);
+				resultado= resultado+numeros[i];	
+			}
+			resultado = resultado +" = "+total;
+		}
 		return resultado;
 	}
 }
